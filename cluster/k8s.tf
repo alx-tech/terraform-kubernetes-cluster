@@ -57,7 +57,7 @@ resource "azurerm_kubernetes_cluster" "cluster" {
     azurerm_role_assignment.service_contributor
   ]
   oms_agent {
-    log_analytics_workspace_id = var.log_analytics_workspace_id
+    log_analytics_workspace_id = var.log_analytics_workspace_id == "" ? null: log_analytics_workspace_id
   }
 }
 
