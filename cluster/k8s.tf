@@ -56,6 +56,10 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   depends_on = [
     azurerm_role_assignment.service_contributor
   ]
+  oms_agent {
+    enabled                    = var.log_analytics_workspace_id != null
+    log_analytics_workspace_id = var.log_analytics_workspace_id
+  }
 }
 
 data "azurerm_resource_group" "cluster_node_group" {

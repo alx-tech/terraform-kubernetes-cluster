@@ -100,3 +100,8 @@ variable "sku_tier" {
     error_message = "The SKU tier might be `Free` or `Paid`."
   }
 }
+
+variable "log_analytics_workspace_id" {
+  description = "The ID of the Log Analytics Workspace to which you would like to send Diagnostic Logs."
+  type        = optional(string)
+}
