@@ -103,5 +103,6 @@ variable "sku_tier" {
 
 variable "log_analytics_workspace_id" {
   description = "The ID of the Log Analytics Workspace to which you would like to send Diagnostic Logs."
-  type        = optional(string)
+  type        = string
+  default     = ""
 }
